@@ -13,12 +13,12 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="peopleDropdown">
             <li><a class="dropdown-item" href="people.html">PI</a></li>
-            <li><a class="dropdown-item" href="students/feng-yang-zhang-1.html">Fengyang Zhang</a></li>
-            <li><a class="dropdown-item" href="students/hai-bin-huang-1.html">Haibin Huang</a></li>
-            <li><a class="dropdown-item" href="students/hong-yong-li-1.html">Hongyong Li</a></li>
-            <li><a class="dropdown-item" href="students/lin-yao-1.html">Lin Yao</a></li>
-            <li><a class="dropdown-item" href="students/mai-qi-sun-1.html">Maiqi Sun</a></li>
-            <li><a class="dropdown-item" href="students/run-jing-zhou-1.html">Runjing Zhou</a></li>
+            <li><a class="dropdown-item" href="students/feng-yang-zhang.html">Fengyang Zhang</a></li>
+            <li><a class="dropdown-item" href="students/hai-bin-huang.html">Haibin Huang</a></li>
+            <li><a class="dropdown-item" href="students/hong-yong-li.html">Hongyong Li</a></li>
+            <li><a class="dropdown-item" href="students/lin-yao.html">Lin Yao</a></li>
+            <li><a class="dropdown-item" href="students/mai-qi-sun.html">Maiqi Sun</a></li>
+            <li><a class="dropdown-item" href="students/run-jing-zhou.html">Runjing Zhou</a></li>
             <li><a class="dropdown-item" href="students/yu-chen-zhang.html">Yuchen Zhang</a></li>
           </ul>
         </li>
@@ -29,20 +29,23 @@
         <li class="nav-item"><a class="nav-link" href="opportunities.html">Opportunities</a></li>
       </ul>
       <!-- 添加搜索图标和搜索框 -->
-      <div class="search-container">
-        <div class="search-box-inline">
-          <input type="text" id="searchInput" placeholder="Search..." onkeypress="handleKeyPress(event)">
-          <button class="btn search-icon" onclick="performSearch()">
-            <i class="fas fa-search"></i>
-          </button>
+      <div class="ms-3">
+        <div class="input-group">
+          <input type="text" id="global-search" class="form-control" 
+                 placeholder="Search..." aria-label="Search">
         </div>
+        <div id="search-results" class="dropdown-menu" 
+             style="width: 300px; max-height: 400px; overflow-y: auto;"></div>
       </div>
     </div>
   </div>
 </nav>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="/js/search.js"></script>
+
 <!-- 添加 Font Awesome 图标库 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <style>
 .search-container {
